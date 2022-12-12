@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="left" class="left"></div>
+        <div id="right" class="right"></div>
+        <button id="btn" onmouseenter="hovIn()" onmouseleave="hovOut()">hover me</button>
+        <div id="hov" class="hov"></div>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn')
+        let hov = document.getElementById('hov')
+        let left = document.getElementById('left')
+        let right = document.getElementById('right')
+
+        function hovIn() {
+            hov.classList.add('hovIn')
+            hov.classList.remove('hovOut')
+            left.classList.add('hovLeft')
+            right.classList.add('hovRight')
+
+            setTimeout(() => {
+                btn.classList.add('btnHov')
+            }, 1500);
+        }
+
+        function hovOut() {
+            left.classList.remove('hovLeft')
+            right.classList.remove('hovRight')
+            hov.classList.remove('hovIn')
+            hov.classList.add('hovOut')
+
+            btn.classList.remove('btnHov')
+        }
+    </script>
+</body>
+
+</html>
